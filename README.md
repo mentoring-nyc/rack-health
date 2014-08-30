@@ -1,4 +1,4 @@
-rack-health-check
+rack-respond
 ===========
 
 Monitoring middleware
@@ -10,8 +10,8 @@ Installation
 
 On the first line of the applications config.ru file, enter:  
 
-    require 'rack_health'
-    use Rack::HealthCheck, routes: ['ping', 'PING'], response: ['PONG']
+    require 'rack-resond'
+    use Rack::Respond, routes: ['ping', 'PING'], response: ['PONG']
 
 Test Application's Health
 =========================
