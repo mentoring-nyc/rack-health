@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
     response, PONG, from a request with, /ping or /PING, in the url you will learn
     quickly the status of your application because the response from your deployed 
     rack based app will not need to go through all its middlewares.'
-  s.authors     = ['Chad Pry', 'Rob Jewell']
-  s.email       = ['jewell.robertp@gmail.com']
+  s.authors     = ['Rob Jewell', 'Chad Pry']
+  s.email       = ['jewell.robertp@gmail.com', 'chad.pry@gmail.com']
   s.files       = ['lib/rack_health_check.rb']
   s.homepage    = 'http://rubygems.org/gems/rack-health'
   s.license     = 'MIT'
