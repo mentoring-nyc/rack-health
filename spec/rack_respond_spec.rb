@@ -1,19 +1,12 @@
 require 'spec_helper'
-require 'pry'
 
 describe Rack::Respond do
-  describe 'GET /ping' do
-
-    let(:app) do
-      lambda { |env|
-        [200, {'Content-Type' => 'text/plain'}, ["Hello, World!"]]
-      }
-    end
-
-    it 'should return, PONG, when receiving a request, ping' do
-      app_response = double(:response, body: 'PONG')
-      Rack::Respond.any_instance.stub(:new).with(app, routes: 'ping', response: 'PONG')
-      expect(app_response.body).to eq('PONG')
+  describe '#call' do
+    it 'should return, /PONG, as the body of the response when receiving a request, /ping' do
+      env = {'PATH_INFO' => '/ping'}
+      app = double('Rack::Middleware', call: true)
+      respond = Rack::Respond.new(app, routes: '/ping', response: '/PONG')
+      expect(respond.call(env)).to eq([200, {'Content-Type' => 'text/plain'}, '/PONG'])
     end
   end
 end
