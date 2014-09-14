@@ -1,7 +1,7 @@
 require File.expand_path('../lib/rack/respond/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors     = ['Rob Jewell', 'Chad Pry']
+  gem.authors     = ['Rob Jewell', 'Chad W Pry']
   gem.email       = ['jewell.robertp@gmail.com', 'chad.pry@gmail.com']
   gem.description = %q{Ascertain the health of your deployed application without
                        needing to go through your entire applications middlewares} 
