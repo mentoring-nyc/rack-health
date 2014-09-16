@@ -30,6 +30,10 @@ describe Rack::Respond do
       it 'should return as a default, text/plain, for the headers content-type' do
         expect(respond.call(env)[1]).to eq({'Content-Type' => 'text/plain'})
       end
+
+      it 'does not return the next middleware' do
+        expect(respond.call(env)).to_not eq(app)
+      end
     end
 
     describe 'when the env hash path_info does not contain, /ping or /PING' do
@@ -40,7 +44,7 @@ describe Rack::Respond do
       end
 
       it 'calls the next Middleware' do
-        expect(respond.call(env)).to eq(true)
+        expect(respond.call(env)).to eq(app.call(env))
       end
     end
   end
